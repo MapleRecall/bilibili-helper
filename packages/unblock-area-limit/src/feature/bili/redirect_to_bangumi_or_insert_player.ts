@@ -19,8 +19,7 @@ export function redirect_to_bangumi_or_insert_player() {
         if (!$errorPanel) {
             return;
         }
-        let msg = document.createElement('a');
-        $errorPanel.insertBefore(msg, $errorPanel.firstChild);
+        let msg = $errorPanel.querySelector('.error-text') as HTMLElement;
         msg.innerText = '获取番剧页Url中...';
         let aid = (location.pathname.match(/\/video\/av(\d+)/) || ['', ''])[1],
             page = (location.pathname.match(/\/index_(\d+).html/) || ['', '1'])[1],
